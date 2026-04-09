@@ -54,6 +54,7 @@ app.use('/api/leaves', require('./routes/leaves'));
 app.use('/api/notifications', require('./routes/notifications'));
 app.use('/api/time-rules', require('./routes/timeRules'));
 app.use('/api/face-data', require('./routes/faceData'));
+app.use('/api/scores', require('./routes/scores'));
 
 // Health check
 app.get('/api/health', (req, res) => {

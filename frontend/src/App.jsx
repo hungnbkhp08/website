@@ -15,6 +15,9 @@ import TeacherNotifications from './pages/teacher/SendNotification';
 import ParentDashboard from './pages/parent/Dashboard';
 import ParentLeaveRequest from './pages/parent/LeaveRequest';
 import ParentNotifications from './pages/parent/Notifications';
+import AdminScores from './pages/admin/Scores';
+import TeacherScores from './pages/teacher/Scores';
+import ParentScores from './pages/parent/Scores';
 
 const ProtectedRoute = ({ children, roles }) => {
   const { user, isAuthenticated, loading } = useAuth();
@@ -89,6 +92,11 @@ function App() {
               <Layout><SchoolReport /></Layout>
             </ProtectedRoute>
           } />
+          <Route path="/admin/scores" element={
+            <ProtectedRoute roles={['admin']}>
+              <Layout><AdminScores /></Layout>
+            </ProtectedRoute>
+          } />
 
           {/* Teacher Routes */}
           <Route path="/teacher" element={
@@ -106,6 +114,11 @@ function App() {
               <Layout><TeacherNotifications /></Layout>
             </ProtectedRoute>
           } />
+          <Route path="/teacher/scores" element={
+            <ProtectedRoute roles={['teacher']}>
+              <Layout><TeacherScores /></Layout>
+            </ProtectedRoute>
+          } />
 
           {/* Parent Routes */}
           <Route path="/parent" element={
@@ -121,6 +134,11 @@ function App() {
           <Route path="/parent/notifications" element={
             <ProtectedRoute roles={['parent']}>
               <Layout><ParentNotifications /></Layout>
+            </ProtectedRoute>
+          } />
+          <Route path="/parent/scores" element={
+            <ProtectedRoute roles={['parent']}>
+              <Layout><ParentScores /></Layout>
             </ProtectedRoute>
           } />
         </Routes>

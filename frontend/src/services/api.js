@@ -108,4 +108,12 @@ export const faceDataAPI = {
   setPrimary: (id) => api.put(`/face-data/${id}/primary`),
 };
 
+// Scores
+export const scoreAPI = {
+  getAll: (params) => api.get('/scores', { params }),
+  create: (data) => api.post('/scores', data),
+  update: (id, data) => api.put(`/scores/${id}`, data),
+  delete: (id) => api.delete(`/scores/${id}`),
+};
+
 export default api;

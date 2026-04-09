@@ -25,6 +25,7 @@ const Layout = ({ children }) => {
           ]},
           { section: 'Báo cáo', items: [
             { path: '/admin/reports', label: 'Thống kê', icon: '📈' },
+            { path: '/admin/scores', label: 'Điểm thi', icon: '📝' },
           ]},
         ];
       case 'teacher':
@@ -35,12 +36,14 @@ const Layout = ({ children }) => {
           { section: 'Quản lý', items: [
             { path: '/teacher/leaves', label: 'Đơn xin phép', icon: '📝' },
             { path: '/teacher/notifications', label: 'Gửi thông báo', icon: '📢' },
+            { path: '/teacher/scores', label: 'Cập nhật điểm', icon: '📝' },
           ]},
         ];
       case 'parent':
         return [
           { section: 'Theo dõi', items: [
             { path: '/parent', label: 'Điểm danh con', icon: '📊' },
+            { path: '/parent/scores', label: 'Bảng điểm', icon: '📝' },
           ]},
           { section: 'Yêu cầu', items: [
             { path: '/parent/leave', label: 'Xin nghỉ phép', icon: '📝' },

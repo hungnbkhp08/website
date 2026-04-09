@@ -6,6 +6,7 @@ const LeaveRequest = require('./LeaveRequest');
 const Notification = require('./Notification');
 const TimeRule = require('./TimeRule');
 const FaceData = require('./FaceData');
+const ExamScore = require('./ExamScore');
 
 // User - Class (Giáo viên chủ nhiệm)
 User.hasMany(Class, { foreignKey: 'teacher_id', as: 'classes' });
@@ -40,6 +41,10 @@ Student.hasMany(FaceData, { foreignKey: 'student_id', as: 'faceData' });
 FaceData.belongsTo(Student, { foreignKey: 'student_id', as: 'student' });
 FaceData.belongsTo(User, { foreignKey: 'uploaded_by', as: 'uploader' });
 
+// Exam Scores
+Student.hasMany(ExamScore, { foreignKey: 'student_id', as: 'scores' });
+ExamScore.belongsTo(Student, { foreignKey: 'student_id', as: 'student' });
+
 module.exports = {
   User,
   Student,
@@ -49,4 +54,5 @@ module.exports = {
   Notification,
   TimeRule,
   FaceData,
+  ExamScore,
 };
