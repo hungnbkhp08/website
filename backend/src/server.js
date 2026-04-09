@@ -13,14 +13,14 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
     methods: ['GET', 'POST'],
   },
 });
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
   credentials: true,
 }));
 app.use(express.json());
@@ -73,7 +73,7 @@ const start = async () => {
     await sequelize.authenticate();
     console.log('✅ Database connected');
 
-    await sequelize.sync({ alter: true });
+    await sequelize.sync();
     console.log('✅ Database synced');
 
     server.listen(PORT, () => {
