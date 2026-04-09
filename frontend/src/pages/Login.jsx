@@ -83,15 +83,6 @@ const Login = () => {
             ) : 'Đăng nhập'}
           </button>
         </form>
-
-        <div style={{ marginTop: 24, padding: '16px', background: 'rgba(99,102,241,0.08)', borderRadius: 'var(--radius-md)', fontSize: 13, color: 'var(--text-muted)' }}>
-          <strong style={{ color: 'var(--primary-400)' }}>Tài khoản demo:</strong>
-          <div style={{ marginTop: 8, display: 'grid', gap: 4 }}>
-            <div>👑 Admin: <strong>admin</strong> / 123456</div>
-            <div>👩‍🏫 Giáo viên: <strong>gv_nguyen</strong> / 123456</div>
-            <div>👨‍👩‍👧 Phụ huynh: <strong>ph_hoang</strong> / 123456</div>
-          </div>
-        </div>
       </div>
     </div>
   );
