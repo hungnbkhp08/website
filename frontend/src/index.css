@@ -141,7 +141,7 @@ body {
 
 .sidebar {
   width: 280px;
-  min-height: 100vh;
+  height: 100vh;
   background: var(--gradient-sidebar);
   border-right: 1px solid var(--border-glass);
   position: fixed;
