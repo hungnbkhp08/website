@@ -29,7 +29,7 @@ services:
       - DB_PASSWORD=postgres123
       - JWT_SECRET=school_attendance_secret_key_2024
       - JWT_EXPIRES_IN=24h
-      - FRONTEND_URL=http://localhost
+      - FRONTEND_URL=http://localhost:3000
     ports:
       - "5000:5000"
     volumes:
@@ -44,7 +44,7 @@ services:
       dockerfile: Dockerfile
     container_name: edutrack_frontend
     ports:
-      - "80:80"
+      - "3000:80"   
     depends_on:
       - backend
     restart: unless-stopped
