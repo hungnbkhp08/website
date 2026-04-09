@@ -130,7 +130,7 @@ const ParentLeaveRequest = () => {
                       <td>
                         {req.reviewer?.full_name || '—'}
                         {req.review_note && (
-                          <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' title={req.review_note} }}>
+                          <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }} title={req.review_note}>
                             💬 {req.review_note}
                           </div>
                         )}
